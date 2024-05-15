@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Expense tracker demo </title>
+        <link rel="stylesheet" href="../static/css/pop-up.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+        <link rel="stylesheet" href="../static/css/input.css">
+        <link rel="stylesheet" href="../static/css/canvas.css">
+        <script src="../static/js/dateHandler.js"></script>
+        <script src="../static/js/expenseUpdater.js"></script>
+        <script src="../static/js/pop-up.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="../static/js/plot-generator.js"></script>
+        <script src="../static/js/category-list.js"></script>
+        <script src="../static/js/accounts.js"></script>
+        <script src="../static/js/categories.js"></script>
+        <script src="../static/js/spends.js"></script>
+        <script src="../static/js/post.js"></script>
+
+    </head>
+    <body>
+
+        <h1> Incomes </h1>
+        <script> window.mode="INCOME" </script>
+        <a href="index.html"> My Expenses </a>
+        <a href="accounts.html"> My Accounts </a>
+        <h3> Time Period </h3>
+        <form class="time-period" id="time-period">
+            <label for="start-date">Start of period: </label>
+            <input type="date" name="start-date" id="start-date"><br>
+            <label for="end-date"> End of period: </label>
+            <input type="date" name="end-date" id="end-date"><br>
+        </form>
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+       
+        <button class="pop-up" onclick="popUp('category', 'INCOME');"> Add Category </button>
+        <button class="pop-up" onclick="popUp('sub', 'INCOME');"> Add Subcategory </button>
+        <button class="pop-up" onclick="popUp('spend', 'INCOME');"> Add Income </button>
+        <div id="pop-up-overlay" class="overlay-container">
+            <div id="box" class="pop-up-box">  </div>
+        </div>
+        <div id="lists-div"> </div>
+    </body>
+</html>
